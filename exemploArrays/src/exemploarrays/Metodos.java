@@ -61,7 +61,7 @@ class Metodos {
         JOptionPane.showMessageDialog(null,"No está en la lista.");
     }
     
-    public void buscarVarios(){
+    public void buscarElementoRepetido(){
         int encontrados[] = new int[notas.length];
         int elementoBuscar = Integer.parseInt(JOptionPane.showInputDialog("Intoduce el elemento a buscar:"));
         for(int i = 0; i < notas.length; i ++){
