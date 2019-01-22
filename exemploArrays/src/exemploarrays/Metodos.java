@@ -5,6 +5,7 @@
  */
 package exemploarrays;
 
+import java.util.Arrays;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,7 +16,8 @@ class Metodos {
     
     // Declaro array y las posiciones de memoria que tendra
     //int[] notas = new int[8];
-    int[] notas = {1,2,3,2,5,2,7,1,5,5,5,5,5,2};
+    int tamaño = 8;
+    int [] notas = new int[tamaño];
     
     // Metodo para introducir los valores y que los devuelva
     public int darValor(){
@@ -86,4 +88,34 @@ class Metodos {
             JOptionPane.showMessageDialog(null,"No se han encontrado coincidencias.","Buscador avanzado",2);
         }
     }
+    
+    public void ordenarDirecto(){
+        int aux;
+        for(int i = 0; i < notas.length - 1; i ++){
+            for(int j = i + 1; j < notas.length; j ++){
+                if(notas[i] > notas[j]){
+                    aux = notas[i];
+                    notas[i] = notas[j];
+                    notas[j] = aux;
+                }
+            }  
+        }
+    }
+    
+    public void ordenarSort(){
+        Arrays.sort(notas);
+    }
+    
+    public void darBaixa(int eleBorrar){
+        for(int i = 0; i < notas.length; i ++){
+            if(notas[i] == eleBorrar){
+                for(int pos = i; pos < notas.length - 1; pos ++){
+                    notas[pos] = notas[pos + 1];
+                }
+                tamaño--;
+            }
+        }
+        
+    }
+    
 }

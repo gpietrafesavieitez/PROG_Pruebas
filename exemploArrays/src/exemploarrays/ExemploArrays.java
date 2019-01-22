@@ -16,11 +16,17 @@ public class ExemploArrays {
      */
     public static void main(String[] args) {
         Metodos obx = new Metodos();
-        //obx.crearArray();
-        obx.amosar();
+        obx.crearArray();
+        //obx.amosar();
         //obx.amosarForEach();
         //obx.buscarElemento();
-        obx.buscarElementos();
+        //obx.buscarElementos();
+        //obx.ordenarDirecto();
+        //obx.amosar();
+        //obx.ordenarSort();
+        //obx.amosar();
+        obx.darBaixa(5);
+        obx.amosar();
     }
     
 }
