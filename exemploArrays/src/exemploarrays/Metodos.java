@@ -14,7 +14,8 @@ import javax.swing.JOptionPane;
 class Metodos {
     
     // Declaro array y las posiciones de memoria que tendra
-    int[] notas = new int[8];
+    //int[] notas = new int[8];
+    int[] notas = {1,2,3,2,5,2,7,1,5,5,5,5,5,2};
     
     // Metodo para introducir los valores y que los devuelva
     public int darValor(){
@@ -42,32 +43,47 @@ class Metodos {
             System.out.print(elemento);
             System.out.print(",");
         }
-        System.out.println("FIN.");
+        System.out.println("FIN.\n");
     }
     // Recorre el array "notas" y en cada iteracion almacena la
     // posicion actual de memoria del array en la variable "elemento" 
     
+    /*
     public void buscarElemento(){
-        // boolean atopado = false;
-        int elementoBuscar = Integer.parseInt(JOptionPane.showInputDialog("Intoduce el elemento a buscar:"));
+        boolean atopado = false;
+        int elementoABuscar = Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce el elemento a buscar:","Buscador",3));
         for(int i = 0; i < notas.length; i ++){
-            if(notas[i] == elementoBuscar){
-                JOptionPane.showMessageDialog(null,"Se ha encontrado " + elementoBuscar + " en la posición " + (i + 1));
-                // atopado = true;
-                System.exit(0);
+            if(notas[i] == elementoABuscar){
+                JOptionPane.showMessageDialog(null,"Elemento encontrado en la posición: " + (i + 1),"Buscador",1);
+                atopado = true;
+                break; // Sale del cursor al encontrar una coincidencia
             }
         }
-        // atopado = false;
-        JOptionPane.showMessageDialog(null,"No está en la lista.");
+        if(atopado == false){
+            JOptionPane.showMessageDialog(null,"No se han encontrado coincidencias.","Buscador",2);
+        }
     }
+    */
     
-    public void buscarElementoRepetido(){
-        int encontrados[] = new int[notas.length];
-        int elementoBuscar = Integer.parseInt(JOptionPane.showInputDialog("Intoduce el elemento a buscar:"));
+    public void buscarElementos(){
+        int c = 0;
+        String atopados[] = new String[notas.length]; // Nuevo array para recoger coincidencias con tamaño igual al array notas
+        int elementoABuscar = Integer.parseInt(JOptionPane.showInputDialog(null,"Introduce el elemento a buscar:","Buscador avanzado",3));
         for(int i = 0; i < notas.length; i ++){
-            if(notas[i] == elementoBuscar){
-                encontrados[i] = elementoBuscar;
+            if(notas[i] == elementoABuscar){
+                c++;
+                atopados[i] = "Encontrado";
             }
+        }
+        if(c > 0){
+            //System.out.println("[*]\tCoincidencias:\t[" + c + "]");
+            for(int i = 0; i < atopados.length; i ++){
+                if(atopados[i] == "Encontrado"){
+                    System.out.println("[-]\tPosición " + (i + 1) + ":\t[" + atopados[i] + "]");
+                }
+            }
+        }else{
+            JOptionPane.showMessageDialog(null,"No se han encontrado coincidencias.","Buscador avanzado",2);
         }
     }
 }

@@ -16,10 +16,11 @@ public class ExemploArrays {
      */
     public static void main(String[] args) {
         Metodos obx = new Metodos();
-        obx.crearArray();
+        //obx.crearArray();
         obx.amosar();
-        obx.amosarForEach();
-        obx.buscarElemento();
+        //obx.amosarForEach();
+        //obx.buscarElemento();
+        obx.buscarElementos();
     }
     
 }
