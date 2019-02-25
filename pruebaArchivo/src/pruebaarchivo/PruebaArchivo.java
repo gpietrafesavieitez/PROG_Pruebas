@@ -29,5 +29,9 @@ public class PruebaArchivo {
         
         f = new File("/home/local/DANIELCASTELAO/gpietrafesavieitez/archivoConAlumnos.txt");
         obx.leerObjetos(f);
+        
+        ArrayList<Alumno> listaAlumnos = new ArrayList<>();
+        EscribirArchivo obxEscribir = new EscribirArchivo();
+        obxEscribir.escribirNumeros("num");
     }
 }
