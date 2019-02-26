@@ -30,7 +30,7 @@ public class EscribirArchivo {
     public void escribirLineas(String nomeFich,ArrayList<Alumno>lista){
         try{
             f = new PrintWriter(new File(nomeFich+".txt"));
-            for(Alumno a1:lista){
+            for(Alumno a1 : lista){
                 f.println(a1.getNome()+","+a1.getNota());
             }
         }catch(FileNotFoundException e){
