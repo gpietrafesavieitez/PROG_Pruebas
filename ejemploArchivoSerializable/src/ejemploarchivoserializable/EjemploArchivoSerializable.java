@@ -9,7 +9,9 @@ package ejemploarchivoserializable;
 public class EjemploArchivoSerializable {
 
     public static void main(String[] args) {
-        EscribirSerializable obx = new EscribirSerializable();
-        obx.escribirObjetosSeri("alumnoserial");
+        EscrituraSerializable escribir = new EscrituraSerializable();
+        escribir.escribirObjSerial("alumnos");
+        LecturaSerializable leer = new LecturaSerializable();
+        leer.leerObjSerial("alumnos");
     }
 }
