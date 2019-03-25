@@ -16,6 +16,7 @@ public class Componentes {
     JButton     btn1, btn2      ;
     JLabel      etiqueta        ;
     JTextField  lineaTexto      ;
+    JComboBox   listaCombo      ;
 
     public void crearVentana(){
         // Instanciamos
@@ -25,6 +26,7 @@ public class Componentes {
         btn2 = new JButton("Botón 2");
         etiqueta = new JLabel("Nombre: ");
         lineaTexto = new JTextField();
+        listaCombo = new JComboBox();
         // Configuramos contenedores
         marco.setSize(900, 500);
         marco.setDefaultCloseOperation(3);
@@ -35,15 +37,19 @@ public class Componentes {
         panel.setLayout(null);
         // Añadimos componentes
         marco.add(panel);
-        etiqueta.setBounds(50, 100, 50, 10);
-        etiqueta.setLocation(50, 100);
+        etiqueta.setBounds(50, 100, 100, 10);
         panel.add(etiqueta);
-        lineaTexto.setBounds(100, 100, 30, 20);
+        lineaTexto.setBounds(120, 100, 300, 20);
         lineaTexto.setColumns(15);
         panel.add(lineaTexto);
         btn1.setBounds(200, 300, 100, 50);
         panel.add(btn1);
         btn2.setBounds(400, 300, 100, 50);
         panel.add(btn2);
+        listaCombo.setBounds(350, 200, 70, 20);
+        listaCombo.addItem("hola");
+        listaCombo.addItem("adios");
+        listaCombo.addItem("que tal");
+        panel.add(listaCombo);
     }   
 }
